@@ -1,11 +1,209 @@
 %-----------------------------------------------------------------------------%
 \chapter{\babDua}
 %-----------------------------------------------------------------------------%
-\todo{tambahkan kata-kata pengantar bab 2 disini}
+Bagian pertama dari bab ini akan menjelaskan mengenai peningkatan proses terintegrasi dan berkelanjutan dalam pengembangan organisasi. Selanjutnya, bab ini akan menjelaskan mengenai model CMMI khususnya mengenai konsepnya, model-modelnya, representasi-representasinya. Secara khusus, bab ini juga akan membahas mengenai area proses \mkeb~dan pengembangan kebutuhan beserta tujuan-tujuan umum dan khusus (untuk kedua area proses tersebut), praktik-praktik umum dan khusus (dalam menjalankan kedua area proses tersebut). Selain itu, bab ini juga akan membahas mengenai kebutuhan-kebutuhan dalam mengembangkan perangkat lunak bantu \mkeb~. Bagian terakhir dari bab ini akan membahas macam-macam pendekatan dan implementasi perangkat lunak bantu \mkeb~yang sudah pernah dilakukan.
 
 %-----------------------------------------------------------------------------%
-\section{\latex~Secara Singkat}
+\section{Peningkatan Proses Organisasi}
 %-----------------------------------------------------------------------------%
+Pencapaian tujuan dan sasaran adalah harapan serta tujuan utama setiap organisasi (perusahaan) tidak terkecuali organisasi yang bergerak dibidang pengembangan perangkat lunak. Adapun tujuan dan sasaran setiap organisasi berbeda sesuai visi dan misi yang dibawa dan hendak dicapai. Pencapaian tujuan dan sasaran yang dimaksud merupakan proses jangka panjang selama kelangsungan hidup organisasi sebagai cara untuk mewujudkan visi dan menjalankan misi yang diemban. Setiap proses yang dijalankan memberikan informasi bagaimana proses itu dapat ditingkatkan performanya. Sebuah proses mendeskripsikan bagaimana sebuah organisasi mengerjakan bisnisnya.\todo{still lacking of something}
+
+\subsection{Proses dan Bisnis}
+Berdasarkan tulisan Dennis M. Ahern, dkk\cite{reqm.distilled}, contoh tujuan dan sasaran organisasi adalah sebagai berikut:
+\begin{itemize}
+	\item Menghasilkan produk dan layanan yang berkualitas
+	\item Menciptakan nilai bagi para pemegang saham
+	\item Menjadi perusahaan pilihan
+	\item Meningkatkan kepuasan pelanggan
+	\item Meningkatkan pangsa pasar
+	\item Mengimplementasi praktik-praktik sukses dan penghematan biaya
+	\item Mendapatkan pengakuan luas industri untuk suatu keunggulan organisasi.
+\end{itemize}
+Sedangkan Tim Kasse dalam bukunya yang berjudul \f{Practical Insights into CMMI�} menyarankan sasaran organisasi (khususnya perusahaan pengembang perangkat lunak) sebagai berikut\cite{reqm.practical}:
+\begin{itemize}
+	\item Waktu untuk memasarkan (produk) berkurang
+	\item Meningkatkan kualitas produk
+	\item Mengurangi galat-galat pada sistem yand ditemukan oleh pelanggan
+	\item Meningkatkan waktu pengiriman
+	\item Meningkatkan kualitas dari produk
+	\item Mencari dan membetulkan cacat pada perangkat lunak sekali dan hanya sekali saja
+	\item Mengurangi risiko-risiko pada proyek
+	\item Menguasai pemasok
+	\item Meningkatkan pelayanan
+	\item Meningkatkan ketersediaan dan kapasitas layanan
+	\item Mempersingkat tingkat waktu perbaikan.
+\end{itemize}
+Dari setiap tujuan dan sasaran organisasi/perusahaan yang dipaparkan oleh kedua sumber di atas, kita dapat mengambil dua kata kunci yang menyertainya yaitu efektivitas dan efisiensi dalam konteks proses bisnis. Meningkatkan proses organisasi adalah cara yang perlu ditempuh setiap organisasi agar tujuan dan sasaran dapat tercapai secara efektif dan efisien. Peningkatan proses ini jelas diperlukan seiring kondisi proses organisasi yang dinamis dan dapat menjadi sangat kompleks. Hal ini tentu saja dapat menghambat proses organisasi itu sendiri. Tetapi, peningkatan ini membutuhkan beberapa tahapan aktivitas yang perlu dilalui agar organisasi dapat menikmati keuntungannya. Organisasi perlu memfokuskan aktivitas peningkatan pada peningkatan kapabilitas proses, kematangan organisasi, efisiensi proses, dan kontrol terhadap proses yang dapat menolong untuk meningkatkan organisasi dalam pemenuhan tujuan dan sasarannya. Lebih lanjut organisasi akan memiliki panduan dan mendokumentasikan bagaimana untuk membuat proses yang distandardkan, meningkatkan efektivitas kerja, mengukur performa organisasi, menggunakan data untuk mengolah bisnis. Sementara itu, melalui pengalaman telah ditunjukkan bahwa dengan usaha perekayasaan yang normal sekitar 2 sampai 10 persen untuk mendukung inisiatif untuk peningkatan proses yang signifikan dapat memberikan keuntungan signifikan sebagai \f{return on investment} (ROI) dan peningkatan di faktor-faktor kunci bisnis yang menjadi indikator\cite{reqm.distilled}.
+
+Sistem komputer telah menjadi alat bantu penting bagi manusia dalam menjalani kehidupannya sehari-hari. Banyak perangkat lunak yang dapat dijalankan di sistem komputer tersebut dikembangkan untuk membantu manusia dalam memecahkan persoalan-persoalan yang dihadapinya. Mulai dari persoalan sederhana seperti kalkulasi sampai persoalan yang kompleks seperti transaksi perbankan. Perangkat lunak tersebut memberi keuntungan dalam hal efektivitas (dalam hal akurasi) dan efisiensi (menghindari tindakan yang tidak perlu) dalam pemecahan persoalan terutama untuk yang berpotensi mengalami repetisi seperti yang sudah disebutkan diatas yaitu transaksi perbankan. Oleh karena itu, banyak organisasi dan perusahaan yang berusaha mengembangkan sistem perangkat lunak untuk mengotomatisasi proses bisnisnya agar bisa lebih efektif dan efisien.
+
+Seringkali persoalan yang dihadapi suatu organisasi atau perusahaan tidak diam saja. Suatu persoalan cenderung berkembang. Contohnya seperti proses bisnis transaksi perbankan yang berkembang Awalnya, bank hanya butuh sistem mencatat transaksi penarikan dan penyetoran uang dari seorang nasabah. Kemudian, bank memutuskan untuk menambah layanan pinjaman. Akibatnya, sistem perbankan yang digunakan perlu dirubah agar dapat mengakomodasi perubahan proses bisnis seperti yang dicontohkan di atas. Pada hal seperti inilah kualitas sistem perangkat lunak dipertaruhkan. Sistem perangkat lunak dibutuhkan untuk bertambah baik (sesuai dengan spesifikasi perangkat lunak yang terbaharukan dan kualitas yang lebih baik). Hanya saja pengembangan dan pembaharuan suatu sistem perangkat lunak bukan tanpa risiko seperti biaya membengkak, melebih waktu yang ditentukan,  tidak selesainya pengembangan atau asal-asal, pengerjaan kembali akibat desain sistem yang berubah, kebutuhan perangkat lunak berkembang pesat saat pengerjaan karena pengembang mengerjakan perangkat lunak tersebut hanya berdasarkan pengalamannya saja, konfirmasi dan verifikasi kebutuhan yang sulit karena lemahnya ketertelusuran antar kebutuhan, sumber daya yang disalahgunakan akibat pelanggan yang sering merubah kebutuhan desain sistem, dll.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model Peningkatan Proses}
+Selama dekade terakhir ini, telah banyak dikembangkan model sebagai referensi dan panduan untuk organisasi untuk melakukan evaluasi, validasi, dan verifikasi terhadap proses-proses di dalamnya untuk peningkatan proses, diantaranya adalah:
+\begin{enumerate}
+	\item RUP (\f{Rational Unified Process})
+	\item SPICE (\f{Software Process Improvement and Capability Evaluation/Determination})
+	\item CMM (\f{Capability Maturity Model})
+	\item CMMI (\f{Capability Maturity Model Integration})
+\end{enumerate}
+
+
+\section{f{Requirements}}
+\todo{add details about requirement}
+
+\subsection{RMUC}
+\todo{add details about RMUC}
+
+\subsection{\f{Requirement Engineering}}
+\todo{add details about requirement engineering}
+
+\subsection{\f{Requirement Management}}
+
+\todo{review dan tingkatkan tulisan}
+\f{Requirement Management} adalah sebuah area proses yang melibatkan strukturisasi, administrasi informasi dari proses perolehan, penurunan, analisis, kordinasi, periwayatan, dan pelacakan dari kebutuhan-kebutuhan selama siklus hidup produk secara lengkap\cite{reqm.requirements}. Area proses \f{Requirement Management} berperan penting mengatasi risiko-risiko pengembangan perangkat lunak yang dipaparkan sebelumnya. 
+
+CMMI menyediakan standard acuan yang populer berupa pendekatan bagi peningkatan proses dari pengembangan perangkat lunak. CMMI juga memungkinkan banyak variasi untuk implementasi peningkatan proses dari pengembangan perangkat lunak sesuai kebutuhan organisasi atau perusahaan. Menurut survei yang diadakan oleh \f{Software Engineering Institute} (SEI) bahwa penggunaan CMMI sebagai standard acuan untuk peningkatan proses perangkat lunak dalam organisasi mengurangi waktu ke pasar sebesar 19\% dan mengurangi tingkat kecacatan sebesar 39\%. Sebuah laporan teknikal lainnya juga mencatat pengurangan biaya pengembangan sebesar 73\%, pengurangan biaya pengerjaan kembali sebesar 96\%, mengurangi waktu siklus pengembangan perangkat lunak rata-rata sebesar 37\%, pengurangan tingkat kecacatan setelah perangkat lunak digunakan sebesar 80\%, dan peningkatan pengembalian investasi sampai 21 kali\cite{reqm.collaborative}. Selain itu dengan mendefinisikan aturan-aturan-aturan mengenai \f{Requirement Management} di awal dari setiap fase diharapkan dapat meningkatkan tingkat kepuasan pelanggan akibat terpenuhinya setiap kebutuhan pelanggan terhadap produk perangkat lunak yang dikembangkan. Di sisi lain, dokumen-dokumen dokumentasi merupakan poin kunci bagi \f{Requirement Management} dimana segala proses pemenuhan kebutuhan dan kebutuhan-kebutuhan perangkat lunak itu sendiri dalam pengembangan produk perangkat lunak dicatat. 
+
+Dalam CMMI tingkat kemampuan level yang ke-2, terdapat 125 butir di praktik spesifiknya\cite{reqm.collaborative}. Bisa dibayangkan betapa besarnya penggunaan kertas dan kerja yang dibutuhkan serta sulitnya untuk  menangani dan mengatur pekerjaan yang melibat kertas dalam jumlah banyak. Ini tentunya akan memakan waktu yang banyak. Apalagi spesifikasi kebutuhan akan semakin detil seiring berjalannya proyek perangkat lunak. Selain itu kebutuhan sistem itu sendiri merupakan model dari sistem yang akan dikembangkan dan sulit untuk sekaligus oleh manusia. Oleh karena itu, perlu dikembangkan perangkat lunak bantu untuk proses area Requirement Management.
+
+\subsubsection{Praktis-praktis pada \f{Requirement Management}}
+\begin{center}
+\begin{longtable}{|p{2cm}|p{2cm}|p{2.5cm}|p{5cm}|}
+
+%header
+\hline  
+Tingkat Kemampuan (Capability Level)& Kode Praktik (Practice Code) & Nama Praktik (Practice Name) & Deskripsi Praktik (Practice Description) \\ \hline \hline
+\endhead
+% end header
+\multirow{2}{*}{CL 5} & GP 5.1 & Ensure Continuous Process Improvement & Ensure continuous improvement of the organizational process focus process in fulfilling the relevant business objectives of the organization.\\ \cline{2-4}
+&GP 5.2 & Correct Root Causes of Problems & Identify and correct the root causes of defects and other problems in the organizational process focus process.\\ \cline{2-4} \hline
+\multirow{2}{*}{CL 4} & GP 4.1 & Establish Quantitative Objectives for the Process & Establish and maintain quantitative objectives for the organizational process focus process that address quality and process performance based on customer needs and business objectives.\\ \cline{2-4}
+& GP 4.2 & Stabilize Sub-process Performance & Stabilize the performance of one or more sub processes to determine the ability of the organizational process focus process to achieve the established quantitative quality and process-performance objectives.\\ \cline{2-4} \hline
+\multirow{2}{*}{CL 3} & GP 3.1 & Establish Defined Process & Establish and maintain the description of a defined organizational process focus process.\\ \cline{2-4}
+& GP 3.2 & Collect Improvement Information & Collect work products, measures, measurement results, and improvement information derived from planning and performing the organizational process focus process to support the future use and improvement of the organization's processes and process assets.\\ \cline{2-4} \hline
+\multirow{12}{*}{CL 2} & SP 1.2-2 & Obtain Commitment to Requirements & Appraise the processes of the organization periodically and as needed to maintain an understanding of their strengths and weaknesses.\\ \cline{2-4}
+& SP 1.4-2 & Maintain bi-directional Traceability & Maintain bidirectional traceability among the Requirements and the project plans and work products.\\ \cline{2-4}
+& GP 2.1 & Establish an Organizational Policy & Establish and maintain an organizational policy for planning and performing the organizational process focus process.\\ \cline{2-4}
+& GP 2.2 & Plan the Process & Establish and maintain the plan for performing the organizational process focus process.\\ \cline{2-4}
+& GP 2.3 & Provide Resources & Provide adequate resources for performing the organizational process focus process, developing the work products, and  providing the services of the process.\\ \cline{2-4}
+& GP 2.4 & Assign Responsibility & Assign responsibility and authority for performing the process, organizational process focus process.\\ \cline{2-4}
+& GP 2.5 & Train People & Train the people performing or supporting the organizational process focus process as needed.\\ \cline{2-4}
+& GP 2.6 & Manage Configurations & Place designated work products of the organizational process  focus process under appropriate levels of configuration management.\\ \cline{2-4}
+& GP 2.7 & Identify and Involve Relevant Stakeholders & Identify and involve the relevant stakeholders of the organizational process focus process as planned.\\ \cline{2-4}
+& GP 2.8 & Monitor \& Control the Process & Monitor and control the organizational process focus process against the plan for performing the process and take appropriate corrective action.\\ \cline{2-4}
+& GP 2.9 & Objectively Evaluate Adherence & Objectively evaluate adherence of the organizational process focus process against its process description, standards, and procedures, and address non compliance.\\ \cline{2-4}
+& GP 2.10 & Review Status with Higher Level Management & Review the activities, status, and results of the organizational process focus process with higher level management and resolve issues.\\ \cline{2-4} \hline
+\multirow{4}{*}{CL 1} & SP 1.1-1 & Obtain Understanding of Requirements & Identify and collect stakeholder needs, expectations, constraints, and interfaces for all phases of the product life cycle.\\ \cline{2-4}
+& SP 1.3-1 & Manage Requirements Changes & Select the product-component solutions that best satisfy the criteria established.\\ \cline{2-4}
+& SP 1.5-1 & Identify Inconsistencies between Project Work and Requirements & Evaluate alternative solutions using the established criteria and methods.\\ \cline{2-4}
+& GP 1.1 & Perform Base Practices & Perform the base practices of the organizational process focus process to develop work products and provide services to achieve the specific goals of the process area.\\ \cline{2-4} \hline
+\caption[Referensi Praktek-praktek Spesifik dan Umum Untuk Memenuhi Area Proses Requirement Management]{Referensi Praktek-praktek Spesifik dan Umum Untuk Memenuhi Area Proses \f{Requirement Management}.\cite{reqm.cmmiforswcontinous}}  \label{tabel.mappingpractices}\\
+\end{longtable}
+\end{center}
+
+\subsubsection{\f{Requirement Management Tools}}
+\todo{add details about requirement management tools}
+
+\subsection{\f{Requirement Development}}
+\todo{add details about requirement development}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analisis Kebutuhan Perangkat Lunak Bantu \f{Requirement Management}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\todo{add details about analisis kebutuhan perangkat lunak bantu}
+
+\subsection{Kebutuhan Perangkat Lunak Bantu \f{Requirement Management} Berdasarkan Aspek Kebutuhan Pemenuhan Sasaran Umum dan Sasaran Khusus CMMI \f{Capability Level} 2}
+\todo{buat penjelasan di sini}
+
+
+\subsection{Kebutuhan Perangkat Lunak Bantu \f{Requirement Management} yang Dikumpulkan Menurut Sudut Pandang Pengembang}
+Bagian ini merupakan intisari dari karya ilmiah yang ditulis oleh Matthias Hofmann, dkk. Mereka mengumpulkan sejumlah kebutuhan untuk pengembangan perangkat lunak bantu \f{Requirement Management} dari perspektif pengembang. Menurut mereka, fungsi-fungsi berikut adalah fungsi utama yang perlu dikembangkan untuk membuat sebuah perangkat lunak bantu \f{Requirement Management} yaitu\cite{reqm.requirements}:
+\begin{enumerate}
+\item Model Informasi
+\item Tampilan
+\item Pengaturan Format, Multimedia, dan Berkas-berkas Eksternal
+\item Manajemen Perubahan dan Komentar
+\item Riwayat dari Dokumentasi
+\item Pendasaran
+\item Ketertelusuran
+\item Fungsi-fungsi Analisis
+\item Integrasi Perangkat Lunak Bantu
+\item Impor
+\item Pembuatan Dokumen
+\item Kolaborasi Kerja di Tugas Pengembangan yang Sama
+\item Pemeriksaan untuk Penggunaan Diluar Jalur Internet
+\end{enumerate}
+\todo{Jelasin tentang kenapa item-item ini dipilih}
+\subsubsection{Model Informasi}
+Perangkat lunak bantu Requirement Management haruslah dapat secara lepas mendefinisikan sebuah Model Informasi (MI) untuk Requirement Management. Spesifikasi-spesifikasi berikut mendapat prioritas paling penting seperti berikut ini:
+\begin{itemize}
+\item Setiap entitas dalam basis data harus dapat teridentifikasi dan khas. Artinya bahwa sebuah struktur hirarkis dan struktur berbentuk lain harus bebas lepas dari identifikasi yang khas dan bisa fleksibel secara otomatis
+\item MI harus memiliki kemampuan dapat dimodifikasi kapanpun selama proyek berlangsung.
+Spesifikasi lainnya yang perlu diperhatikan adalah fitur berorientasikan objek seperti pewarisan dan penggunaan kembali yang bisa digunakan untuk semua kelas, tipe, dan attribut. Spesifikasi tambahan yang jika memungkinkan dapat diimplementasikan meliputi fitur Graphical User Interface (GUI) untuk mendefinisikan dan mengkonfigurasikan MI serta fitur dokumen contoh (template) untuk digunakan.
+\end{itemize}
+\subsubsection{Tampilan}
+Perangkat lunak bantu Requirement Management harus dapat menampilkan tampilan yang bermacam-macam dari data yang sama. Tampilan yang secara bebas dan dapat dikonfigurasi dapat menampilkan sejumlah kemungkinan untuk menampilkan sebagian koleksi data dari beberapa proyek atau bagian proyek. Poin-poin yang perlu diimplementasikan beserta tingkat kepentingannya sebagai berikut:
+\begin{itemize}
+\item Tampilan harus bisa didefinisikan dengan baik secara umum ataupun sesuai keinginan pengguna. (sangat penting)
+\item	Tampilan harus bebas untuk diubah berdasarkan pilihan-pilihan yang tersedia seperti pilihan-pilihan untuk filterisasi objek, relasi, dan atribut. (sangat penting)
+\item	Objek-objek yang tersedia harus dapat diubah dari tampilan saat ini. (penting)
+\item	Pengguna diharapkan dapat melihat kebutuhan-kebutuhan sistem perangkat lunak dengan tampilan seperti pengguna melihat dokumentasi yang ditulis di kertas. (sangat penting)
+\item	Pengguna juga bisa melihat kebutuhan-kebutuhan sistem perangkat lunak dengan bentuk seperti data dalam basis data yang direpresentasikan dengan bentuk formulir atau tabel. (sangat penting)
+\item	Tampilan GUI dari kebutuhan-kebutuhan sistem perangkat lunak tersedia 
+\item	Perangkat lunak bantu memungkinkan tampilan yang dapat dilihat berdasarkan peran pengguna.Sedangkan, peran pengguna dapat diganti sepanjang proyek perangkat lunak. (penting)
+\item	Semua pengguna dapat mengubah tampilan standard tanpa merubah dokumen acuan. (sangat penting)
+\end{itemize}
+
+\subsubsection{Pengaturan Format, Multimedia, dan Berkas-berkas Eksternal}
+Perangkat lunak bantu harus dapat memungkinkan kebutuhan-kebutuhan suatu sistem dalam proyek diperlengkapi dengan pengaturan format dan objek-objek yang bukan bagian dari perangkat lunak bantu. Poin-poin yang perlu diimplementasikan berikut tingkat kepentingannya sebagai berikut:
+\begin{itemize}
+\item	Perangkat lunak bantu seharusnya dapat mendukung pengaturan format dasar dan mahir (seperti rumus matematika dan karakter-karakter yang bukan berasal dari bahasa Latin). (penting)
+\item	Objek-objek bukan teks agar bisa disimpan secara langsung ke basis data. (sangat penting)
+\item	Objek-objek eksternal yang dapat dilihat secara pra tampil. (sangat penting)
+\end{itemize}
+
+\subsubsection{Manajemen Perubahan dan Komentar}
+Perangkat lunak bantu memungkinkan untuk menangani permintaan perubahan secara formal. Poin-poin yang perlu diimplementasikan berikut tingkat kepentingannya sebagai berikut:
+\begin{itemize}
+\item	Permintaan perubahan dapat memiliki informasi status seperti diterima, ditolak, atau ditangguhkan. (penting)
+\item	Ada fitur komentar dan diskusi yang dihubungkan untuk setiap kebutuhan. Komentar tersebut dapat ditambahkan sesuai kebutuhan. (kurang penting).
+\end{itemize}
+\subsubsection{Riwayat dari Dokumentasi}
+Poin-poin yang dapat diimplementasikan berikut tingkat kepentingannya adalah:
+\begin{itemize}
+\item	Perubahan kebutuhan-kebutuhan dapat ditelusuri dan disimpan dalam basis data. (sangat penting)
+\item	Objek-objek dalam perangkat lunak bantu harus dibuat riwayatnya. (sangat penting).
+\item	dll.
+\end{itemize}
+
+\subsubsection{Pendasaran}
+Perangkat lunak bantu haruslah mendukung pendasaran. Pendasaran adalah kondisi saat kebutuhan-kebutuhan perangkat lunak ditetapkan pada suatu waktu.
+
+\subsubsection{Ketertelusuran}
+Perangkat lunak bantu harus memungkinkan ketertelusuran antar kebutuhan-kebutuhan melewati tautan-tautan yang ada. Tautan ini harus berpihak kepada pengguna dan mudah pemakaiannya.
+
+\subsubsection{Fungsi-fungsi Analisis}
+Perangkat lunak bantu harus bisa menganalisis kebutuhan-kebutuhan yang ada di sistem. Contohnya seperti analisis bahasa, struktur tautan, analisis kemajuan proyek, dan manajemen risiko. Poin-poin berikut merupakan poin yang dapat diimplementasikan beserta tingkat kepentingannya:
+\begin{enumerate}
+\item	Perangkat lunak bantu menyediakan informasi tentang status kemajuan dari proyek perangkat lunak. (penting)
+\item	Perangkat lunak dapat mengetahui ketidakkonsistenan dari struktur link dengan melakukan analisis pada saat melakukan penelusuran. (penting)
+\end{enumerate}
+\subsubsection{Integrasi Perangkat Lunak Bantu}
+Perangkat lunak bantu Requirement Management yang dikembangkan harus memungkinkan integrasi dengan aplikasi perangkat lunak bantu untuk proses lainnya. Penting untuk diingat bahwa jangan sampai ada redudansi data, masing-masing perangkat lunak bantu harus memiliki koneksi yang transparan, tautan ke objek luar harus diatur dengan cara yang sama dengan tautan dalam, hak akses ke objek luar harus dapat dikenali, dll.
+
+\subsubsection{Impor}
+Perangkat lunak bantu Requirement Management mampu untuk memasukkan dokumen (misalkan dokumen  Ms. Word) seperti SRS dengan mempertahankan bentuk, format, data, dll.
+
+\subsubsection{Pembuatan Dokumen}
+Perangkat lunak bantu Requirement Management mampu membuat dokumen yang serupa dengan aplikasi pemrosesan kata yang telah tersedia di pasar. Namun, dokumen yang dibuat telah didefinisikan terlebih dahulu dengan data awal yang berasal dari basis data.
+
+\subsubsection{Kolaborasi Kerja di Tugas Pengembangan yang Sama}
+Perangkat lunak bantu Requirement Management memampukan banyak pengguna bekerja sama (berkolaborasi) secara waktu nyata pada tugas pengembangan yang sama. Ini berarti jika ada perubahan terhadap suatu objek oleh seorang pengguna maka hal ini harus berlaku juga ke seluruh pengguna pada saat yang sama.
+
+\subsubsection{Pemeriksaan untuk Penggunaan Diluar Jalur Internet}
+\todo{tambah deskripsi}
+
 Berdasarkan \cite{latex.intro}: \\ 
 \begin{tabular}{| p{13cm} |}
 	\hline 

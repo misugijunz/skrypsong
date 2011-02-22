@@ -17,13 +17,15 @@
 
 % Load konfigurasi LaTeX untuk tipe laporan thesis
 \usepackage{uithesis}
+\usepackage{longtable}
+\usepackage{multirow}
 
 
 % Load konfigurasi khusus untuk laporan yang sedang dibuat
 \input{laporan_setting}
 % Daftar pemenggalan suku kata dan istilah dalam LaTeX
 \include{hype.indonesia}
-% Daftar istilah yang mungkin perlu ditandai 
+% Daftar istilah yang  mungkin perlu ditandai 
 \input{istilah}
 
 % Awal bagian penulisan laporan
@@ -76,10 +78,13 @@
 %
 % Daftar isi, gambar, dan tabel
 %
+\phantomsection
 \tableofcontents
 \clearpage
+\phantomsection
 \listoffigures
 \clearpage
+\phantomsection
 \listoftables
 \clearpage
 
@@ -96,7 +101,7 @@
 \include{bab3}
 \include{bab4}
 \include{bab5}
-\include{bab6}
+%\include{bab6}
 \include{kesimpulan}
 
 %
